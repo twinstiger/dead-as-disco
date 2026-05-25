@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#130a1f"/>
+  <rect width="640" height="4" fill="#8b5cf6" opacity="0.8"/>
+  <circle cx="320" cy="160" r="40" fill="#8b5cf6" opacity="0.15"/>
+  <text x="320" y="170" text-anchor="middle" font-size="32" fill="#8b5cf6">🎭</text>
+  <text x="320" y="210" text-anchor="middle" font-size="14" font-weight="bold" fill="#f0e6ff" font-family="sans-serif">Charlie Disco</text>
+  <text x="320" y="230" text-anchor="middle" font-size="11" fill="#9d8cba" font-family="sans-serif">The Revenge Story</text>
+</svg>
