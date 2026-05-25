@@ -52,10 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
     darkModeToggle.addEventListener('click', function() {
       document.body.classList.toggle('dark-mode');
       const isDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('fh6guide-dark-mode', isDark ? 'true' : 'false');
+      localStorage.setItem('deadasdisco-dark-mode', isDark ? 'true' : 'false');
     });
 
-    const savedDarkMode = localStorage.getItem('fh6guide-dark-mode');
+    const savedDarkMode = localStorage.getItem('deadasdisco-dark-mode');
     if (savedDarkMode === 'true') {
       document.body.classList.add('dark-mode');
     }
