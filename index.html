@@ -83,7 +83,7 @@
         <a href="pages/guides/walkthrough.html" class="btn btn-outline">Story Walkthrough</a>
       </div>
     </div>
-  </section
+  </section>
   <section class="hero-carousel" aria-label="Featured Screenshots">
     <div class="carousel-track">
       <div class="carousel-slide active">
@@ -326,6 +326,49 @@
 
   <div id="toast" class="toast">Copied!</div>
   <script>
+  // Carousel functionality
+  var currentSlide = 0;
+  var slides = document.querySelectorAll('.carousel-slide');
+  var dots = document.querySelectorAll('.dot');
+  var totalSlides = slides.length;
+  var autoPlayInterval;
+
+  function goToSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = index;
+    if (currentSlide >= totalSlides) currentSlide = 0;
+    if (currentSlide < 0) currentSlide = totalSlides - 1;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  function moveSlide(direction) {
+    goToSlide(currentSlide + direction);
+  }
+
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(function() {
+      moveSlide(1);
+    }, 5000);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  // Initialize dots click handlers
+  dots.forEach(function(dot, index) {
+    dot.addEventListener('click', function() {
+      goToSlide(index);
+      stopAutoPlay();
+      startAutoPlay();
+    });
+  });
+
+  // Start autoplay
+  startAutoPlay();
+
   // FAQ accordion
   document.querySelectorAll('.faq-question').forEach(function(btn) {
     btn.addEventListener('click', function() {

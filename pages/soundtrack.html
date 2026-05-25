@@ -7,6 +7,39 @@
   <meta name="description" content="Complete guide to the Dead As Disco soundtrack: 30+ original tracks, covers, licensed bangers, and how to unlock hidden songs.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .track-list { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin: 1rem 0; }
+    .track-item { display: flex; align-items: center; gap: 1rem; padding: 0.875rem 1.25rem; border-bottom: 1px solid var(--border); transition: var(--transition); cursor: pointer; }
+    .track-item:last-child { border-bottom: none; }
+    .track-item:hover { background: var(--bg-card-hover); }
+    .track-item.playing { background: rgba(255,45,120,0.1); border-left: 3px solid var(--accent); }
+    .track-play-btn { width: 36px; height: 36px; border-radius: 50%; background: var(--bg-secondary); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); flex-shrink: 0; }
+    .track-play-btn:hover { border-color: var(--accent); background: var(--accent); }
+    .track-play-btn svg { width: 14px; height: 14px; fill: var(--text-muted); }
+    .track-item.playing .track-play-btn { background: var(--accent); border-color: var(--accent); }
+    .track-item.playing .track-play-btn svg { fill: #fff; }
+    .track-info { flex: 1; min-width: 0; }
+    .track-title { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.125rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .track-meta { font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 0.75rem; align-items: center; }
+    .track-duration { font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-heading); }
+    .track-tag { display: inline-block; font-size: 0.6rem; font-weight: 700; color: var(--neon-purple); background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.3); padding: 0.125rem 0.5rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .player-bar { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(10,6,18,0.98); border-top: 2px solid var(--accent); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; z-index: 1000; box-shadow: 0 -4px 24px rgba(0,0,0,0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .player-track-info { flex: 1; min-width: 0; }
+    .player-track-title { font-size: 0.875rem; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .player-track-album { font-size: 0.7rem; color: var(--text-muted); }
+    .player-controls { display: flex; align-items: center; gap: 0.75rem; }
+    .player-btn { width: 32px; height: 32px; border-radius: 50%; background: none; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); }
+    .player-btn:hover { transform: scale(1.1); }
+    .player-btn svg { width: 18px; height: 18px; fill: var(--text); }
+    .player-btn-play { width: 40px; height: 40px; background: var(--accent); border-radius: 50%; }
+    .player-btn-play svg { width: 20px; height: 20px; fill: #fff; }
+    .player-progress { flex: 2; display: flex; align-items: center; gap: 0.75rem; }
+    .player-time { font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-heading); min-width: 40px; }
+    .progress-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; cursor: pointer; position: relative; }
+    .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; width: 0%; transition: width 100ms linear; }
+    .main-content { padding-bottom: 100px; }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -43,29 +76,129 @@
         <h1 class="tool-page-title">Soundtrack Guide</h1>
         <p class="lead">Dead As Disco features 30+ original tracks, killer covers, and licensed bangers — all synced to combat. Full track breakdown, unlock conditions, and ratings.</p>
       </div>
-      <h2 style="margin-top:2rem;margin-bottom:1rem;font-size:1.125rem;font-weight:800;">Original Tracks</h2>
-      <div class="feature-grid">
-        <div class="feature-card"><div class="feature-body"><span class="feature-tag">Main Theme</span><h3>Dead As Disco Theme</h3><p>An 80s-inflected rock anthem with a driving beat. The main menu track. BPM: 128.</p></div></div>
-        <div class="feature-card"><div class="feature-body"><span class="feature-tag">Boss Theme</span><h3>Synthetic Dreams</h3><p>Arora's boss theme. Synth-pop with digital distortion. Mastering this beat makes the Arora fight significantly easier. BPM: 135.</p></div></div>
-        <div class="feature-card"><div class="feature-body"><span class="feature-tag">Chapter 3</span><h3>Last Dance</h3><p>A mournful track for flashback sequences. The beat slows during emotional moments — pay attention to these cues. BPM: 95.</p></div></div>
-        <div class="feature-card"><div class="feature-body"><span class="feature-tag">Final Boss</span><h3>The Encore (Reunion)</h3><p>The climactic track with three sections matching the three boss phases. BPM: 140-160.</p></div></div>
-        <div class="feature-card"><div class="feature-body"><span class="feature-tag">Infinite Disco</span><h3>Endless Night</h3><p>Default Infinite Disco track. High-energy dance-pop that scales difficulty as the session progresses. BPM: 138.</p></div></div>
-        <div class="feature-card"><div class="feature-body"><span class="feature-tag">My Music</span><h3>Bring Your Own Beats</h3><p>Import any track. The game analyzes the beat and generates a custom combat chart. Works with any genre.</p></div></div>
+
+      <!-- Track List -->
+      <h2 style="margin-top:2rem;margin-bottom:1rem;font-size:1.125rem;font-weight:800;">Original Soundtrack</h2>
+      <div class="track-list" id="trackList">
+        <div class="track-item" data-src="" data-title="Dead As Disco Theme" data-album="Main Menu" data-duration="3:42">
+          <button class="track-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+          <div class="track-info">
+            <div class="track-title">Dead As Disco Theme</div>
+            <div class="track-meta"><span class="track-tag">Main Theme</span><span>BPM: 128</span></div>
+          </div>
+          <div class="track-duration">3:42</div>
+        </div>
+        <div class="track-item" data-src="" data-title="Synthetic Dreams" data-album="Boss Battles" data-duration="3:18">
+          <button class="track-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+          <div class="track-info">
+            <div class="track-title">Synthetic Dreams</div>
+            <div class="track-meta"><span class="track-tag">Boss Theme</span><span>BPM: 135</span></div>
+          </div>
+          <div class="track-duration">3:18</div>
+        </div>
+        <div class="track-item" data-src="" data-title="Last Dance" data-album="Story Mode" data-duration="4:05">
+          <button class="track-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+          <div class="track-info">
+            <div class="track-title">Last Dance</div>
+            <div class="track-meta"><span class="track-tag">Chapter 3</span><span>BPM: 95</span></div>
+          </div>
+          <div class="track-duration">4:05</div>
+        </div>
+        <div class="track-item" data-src="" data-title="The Encore (Reunion)" data-album="Final Boss" data-duration="4:32">
+          <button class="track-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+          <div class="track-info">
+            <div class="track-title">The Encore (Reunion)</div>
+            <div class="track-meta"><span class="track-tag">Final Boss</span><span>BPM: 140-160</span></div>
+          </div>
+          <div class="track-duration">4:32</div>
+        </div>
+        <div class="track-item" data-src="" data-title="Endless Night" data-album="Infinite Disco" data-duration="3:55">
+          <button class="track-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+          <div class="track-info">
+            <div class="track-title">Endless Night</div>
+            <div class="track-meta"><span class="track-tag">Infinite Disco</span><span>BPM: 138</span></div>
+          </div>
+          <div class="track-duration">3:55</div>
+        </div>
+        <div class="track-item" data-src="" data-title="Neon Streets" data-album="Story Mode" data-duration="3:28">
+          <button class="track-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+          <div class="track-info">
+            <div class="track-title">Neon Streets</div>
+            <div class="track-meta"><span class="track-tag">Chapter 1</span><span>BPM: 120</span></div>
+          </div>
+          <div class="track-duration">3:28</div>
+        </div>
+        <div class="track-item" data-src="" data-title="Rhythm Revolt" data-album="Combat Tracks" data-duration="2:45">
+          <button class="track-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+          <div class="track-info">
+            <div class="track-title">Rhythm Revolt</div>
+            <div class="track-meta"><span class="track-tag">Combat</span><span>BPM: 150</span></div>
+          </div>
+          <div class="track-duration">2:45</div>
+        </div>
+        <div class="track-item" data-src="" data-title="Flashback" data-album="Story Mode" data-duration="3:12">
+          <button class="track-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+          <div class="track-info">
+            <div class="track-title">Flashback</div>
+            <div class="track-meta"><span class="track-tag">Chapter 2</span><span>BPM: 88</span></div>
+          </div>
+          <div class="track-duration">3:12</div>
+        </div>
+        <div class="track-item" data-src="" data-title="Ghost City" data-album="Exploration" data-duration="3:35">
+          <button class="track-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+          <div class="track-info">
+            <div class="track.title">Ghost City</div>
+            <div class="track-meta"><span class="track-tag">Exploration</span><span>BPM: 110</span></div>
+          </div>
+          <div class="track-duration">3:35</div>
+        </div>
+        <div class="track-item" data-src="" data-title="Bring Your Own Beats" data-album="My Music" data-duration="—">
+          <button class="track-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+          <div class="track-info">
+            <div class="track-title">Bring Your Own Beats</div>
+            <div class="track-meta"><span class="track-tag">My Music</span><span>Custom</span></div>
+          </div>
+          <div class="track-duration">—</div>
+        </div>
       </div>
+
       <h2 style="margin-top:2.5rem;margin-bottom:1rem;font-size:1.125rem;font-weight:800;">My Music Feature</h2>
-      <p>The My Music feature analyzes any track in your library and generates a custom combat chart synced to its beat. The game detects beat position, BPM changes, track sections (intro/verse/chorus/bridge), dynamics, and energy level for difficulty scaling.</p><p>This turns any song into a custom playable level. Create challenges for friends or practice specific tracks for Infinite Disco high scores.</p>
+      <p>The My Music feature analyzes any track in your library and generates a custom combat chart synced to its beat. The game detects beat position, BPM changes, track sections (intro/verse/chorus/bridge), dynamics, and energy level for difficulty scaling.</p>
+      <p>This turns any song into a custom playable level. Create challenges for friends or practice specific tracks for Infinite Disco high scores.</p>
+
       <h2 style="margin-top:2.5rem;margin-bottom:1rem;font-size:1.125rem;font-weight:800;">Track Ratings</h2>
       <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin:1rem 0">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.8125rem">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.5rem">
           <div style="display:flex;justify-content:space-between;padding:0.5rem;background:var(--bg-secondary);border-radius:6px"><span style="color:var(--text)">Dead As Disco Theme</span><span style="color:var(--disco-gold)">★★★★★</span></div>
           <div style="display:flex;justify-content:space-between;padding:0.5rem;background:var(--bg-secondary);border-radius:6px"><span style="color:var(--text)">Synthetic Dreams</span><span style="color:var(--disco-gold)">★★★★☆</span></div>
           <div style="display:flex;justify-content:space-between;padding:0.5rem;background:var(--bg-secondary);border-radius:6px"><span style="color:var(--text)">Last Dance</span><span style="color:var(--disco-gold)">★★★★★</span></div>
+          <div style="display:flex;justify-content:space-between;padding:0.5rem;background:var(--bg-secondary);border-radius:6px"><span style="color:var(--text)">The Encore</span><span style="color:var(--disco-gold)">★★★★★</span></div>
           <div style="display:flex;justify-content:space-between;padding:0.5rem;background:var(--bg-secondary);border-radius:6px"><span style="color:var(--text)">Endless Night</span><span style="color:var(--disco-gold)">★★★★☆</span></div>
+          <div style="display:flex;justify-content:space-between;padding:0.5rem;background:var(--bg-secondary);border-radius:6px"><span style="color:var(--text)">Neon Streets</span><span style="color:var(--disco-gold)">★★★★☆</span></div>
         </div>
         <p style="color:var(--text-muted);font-size:0.775rem;margin-top:1rem;margin-bottom:0">Ratings based on combat flow, beat clarity, and memorability. Full tracklist updated as we progress through the game.</p>
       </div>
     </div>
   </main>
+
+  <!-- Player Bar -->
+  <div class="player-bar" id="playerBar" style="display:none;">
+    <div class="player-track-info">
+      <div class="player-track-title" id="playerTitle">Select a track to play</div>
+      <div class="player-track-album" id="playerAlbum">—</div>
+    </div>
+    <div class="player-controls">
+      <button class="player-btn" id="playerPrev"><svg viewBox="0 0 24 24"><polygon points="19,20 9,12 19,4"/><rect x="5" y="4" width="3" height="16"/></svg></button>
+      <button class="player-btn player-btn-play" id="playerPlay"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" id="playIcon"/></svg></button>
+      <button class="player-btn" id="playerNext"><svg viewBox="0 0 24 24"><polygon points="5,20 15,12 5,4"/><rect x="16" y="4" width="3" height="16"/></svg></button>
+    </div>
+    <div class="player-progress">
+      <span class="player-time" id="playerCurrentTime">0:00</span>
+      <div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="player-time" id="playerTotalTime">0:00</span>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
@@ -81,5 +214,139 @@
       <div class="footer-bottom"><span class="footer-copy">Dead As Disco Guide &copy; 2026</span></div>
     </div>
   </footer>
+
+  <script>
+    var playerBar = document.getElementById('playerBar');
+    var playerTitle = document.getElementById('playerTitle');
+    var playerAlbum = document.getElementById('playerAlbum');
+    var playerPlay = document.getElementById('playerPlay');
+    var playIcon = document.getElementById('playIcon');
+    var progressFill = document.getElementById('progressFill');
+    var playerCurrentTime = document.getElementById('playerCurrentTime');
+    var playerTotalTime = document.getElementById('playerTotalTime');
+    var progressBar = document.getElementById('progressBar');
+
+    var tracks = document.querySelectorAll('.track-item');
+    var currentTrack = null;
+    var isPlaying = false;
+    var currentIndex = 0;
+
+    // Audio element placeholder - would be replaced with actual audio
+    // var audio = new Audio();
+
+    function formatTime(seconds) {
+      var mins = Math.floor(seconds / 60);
+      var secs = Math.floor(seconds % 60);
+      return mins + ':' + (secs < 10 ? '0' : '') + secs;
+    }
+
+    function parseDuration(str) {
+      if (!str || str === '—') return 0;
+      var parts = str.split(':');
+      return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+    }
+
+    function playTrack(index) {
+      var track = tracks[index];
+      var title = track.dataset.title;
+      var album = track.dataset.album;
+      var duration = track.dataset.duration;
+
+      // Update player UI
+      playerBar.style.display = 'flex';
+      playerTitle.textContent = title;
+      playerAlbum.textContent = album;
+      playerTotalTime.textContent = duration;
+
+      // Highlight current track
+      tracks.forEach(function(t) { t.classList.remove('playing'); });
+      track.classList.add('playing');
+
+      currentIndex = index;
+      isPlaying = true;
+      updatePlayButton();
+
+      // Simulate progress (in real implementation, bind to audio events)
+      simulatePlayback(duration);
+    }
+
+    function simulatePlayback(duration) {
+      var totalSeconds = parseDuration(duration);
+      if (totalSeconds === 0) return;
+
+      var startTime = Date.now();
+      var interval = setInterval(function() {
+        if (!isPlaying) {
+          clearInterval(interval);
+          return;
+        }
+
+        var elapsed = (Date.now() - startTime) / 1000;
+        var percent = (elapsed / totalSeconds) * 100;
+        progressFill.style.width = percent + '%';
+        playerCurrentTime.textContent = formatTime(elapsed);
+
+        if (elapsed >= totalSeconds) {
+          clearInterval(interval);
+          progressFill.style.width = '0%';
+          playerCurrentTime.textContent = '0:00';
+          isPlaying = false;
+          updatePlayButton();
+          // Auto-play next track
+          if (currentIndex < tracks.length - 1) {
+            playTrack(currentIndex + 1);
+          }
+        }
+      }, 1000);
+    }
+
+    function updatePlayButton() {
+      if (isPlaying) {
+        playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+      } else {
+        playIcon.innerHTML = '<polygon points="5,3 19,12 5,21"/>';
+      }
+    }
+
+    function togglePlay() {
+      if (currentTrack === null) {
+        if (tracks.length > 0) {
+          playTrack(0);
+        }
+        return;
+      }
+      isPlaying = !isPlaying;
+      updatePlayButton();
+    }
+
+    // Track click handlers
+    tracks.forEach(function(track, index) {
+      track.addEventListener('click', function() {
+        playTrack(index);
+      });
+    });
+
+    // Player controls
+    playerPlay.addEventListener('click', togglePlay);
+
+    document.getElementById('playerPrev').addEventListener('click', function() {
+      if (currentIndex > 0) {
+        playTrack(currentIndex - 1);
+      }
+    });
+
+    document.getElementById('playerNext').addEventListener('click', function() {
+      if (currentIndex < tracks.length - 1) {
+        playTrack(currentIndex + 1);
+      }
+    });
+
+    // Progress bar click
+    progressBar.addEventListener('click', function(e) {
+      var rect = progressBar.getBoundingClientRect();
+      var percent = ((e.clientX - rect.left) / rect.width) * 100;
+      progressFill.style.width = percent + '%';
+    });
+  </script>
 </body>
 </html>
