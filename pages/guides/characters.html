@@ -7,6 +7,19 @@
   <meta name="description" content="Meet Charlie Disco and the five Idol betrayers. Full boss strategies with attack patterns, weaknesses, Beat Sync phases, and how to defeat each one.">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .char-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+    .char-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: var(--transition); }
+    .char-card:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+    .char-img { width: 100%; height: 200px; object-fit: cover; }
+    .char-body { padding: 1.25rem; }
+    .char-role { display: inline-block; font-size: 0.625rem; font-weight: 700; color: var(--neon-purple); background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.3); padding: 0.2rem 0.6rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .char-name { font-size: 1.125rem; font-weight: 800; margin-bottom: 0.5rem; font-family: var(--font-heading); }
+    .char-desc { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 0; }
+    .char-meta { display: flex; gap: 1rem; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--text-muted); }
+    .char-meta span { display: flex; align-items: center; gap: 0.375rem; }
+    .char-meta strong { color: var(--text); }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -37,23 +50,106 @@
     </div>
   </header>
   <main class="main-content">
-    <div class="container" style="max-width:780px">
+    <div class="container" style="max-width:920px">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a> <span>/</span> <a href="index.html">Guides</a> <span>/</span> <span>Characters &amp; Bosses</span>
       </div>
-      
-      <div class="guide-hero">
-        <img src="../../images/character-dancer-hide.jpg" alt="The Dead As Disco Cast" class="guide-hero-img" loading="eager">
-        <div class="guide-hero-overlay">
-          <h2 class="guide-hero-title">The Dead As Disco Cast</h2>
-          <p class="guide-hero-desc">Charlie, the five Idols, and the ghosts who haunt The Encore.</p>
-        </div>
-      </div>
-<div class="tool-page-header">
+
+      <div class="tool-page-header">
         <h1 class="tool-page-title">Characters &amp; Bosses</h1>
-        <p class="lead">Meet Charlie Disco and the five Idol betrayers.</p>
+        <p class="lead">Meet Charlie Disco and the five Idol betrayers. Each boss has unique attack patterns and a Beat Sync phase.</p>
       </div>
-<h2>The Cast</h2><p>Dead As Disco centers on Charlie Disco and the five former bandmates who betrayed him. Each has their own arena, attack style, and personal story arc. Tackle them in any order after the first boss.</p><h2>Charlie Disco — The Protagonist</h2><p>Drummer of Dead As Disco. Killed ten years ago, resurrected for one night. Fights to uncover the truth and get revenge. His combat style is a mix of power drumming and rhythm-based martial arts — every punch lands on the beat. Charlie is the most balanced character, effective in all situations.</p><h2>Arora — The AI Idol</h2><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin:1rem 0"><p style="margin:0 0 0.5rem"><strong style="color:var(--accent)">Arena:</strong> <span style="color:var(--text-muted)">Harmony Corp Digital Stage</span></p><p style="margin:0 0 0.5rem"><strong style="color:var(--accent)">Difficulty:</strong> <span style="color:var(--disco-gold)">★★☆☆☆ (Easy)</span></p><p style="margin:0"><strong style="color:var(--accent)">Music:</strong> <span style="color:var(--text-muted)">"Synthetic Dreams" — synth-pop with digital distortion, BPM 135</span></p></div><p>Arora is a next-gen AI pop idol built by Harmony Corp. Her attack pattern centers on melody projectiles — musical notes that home toward Charlie.</p><p><strong>Phase 1:</strong> Fires rhythmic note patterns. Watch the beat — dodge on-beat, counterattack during the gap.</p><p><strong>Phase 2 (below 50% HP):</strong> "Harmony Trap" — area denial that freezes Charlie if he does not Beat Sync. Position near arena edges to avoid it. She is vulnerable for 3 seconds after the trap ends.</p><p><strong>Weakness:</strong> Arora has no close-range options. Close the distance with a charged heavy attack to break her rhythm and deal free damage.</p><h2>The Four Former Bandmates</h2><p>The remaining bosses are Charlie's former bandmates, each now an established music idol. Their attack patterns are tied to their musical styles — a guitarist with sound waves, a bassist with low-frequency attacks, a vocalist with sonic screams, and a keyboardist who creates sonic traps. Each boss has three phases: normal patterns, increased attack speed at 50% HP, and a Beat Sync phase at 25% HP where every attack must be on-beat.</p><h2>Boss General Tips</h2><ul style="margin:1rem 0 1.5rem 1.5rem;list-style:disc"><li>Always save a Beat Sync for each boss's Beat Sync phase</li><li>Watch for the pink glow — it means a Beat Sync attack is coming</li><li>Their stagger window is 2-3 seconds after a full combo</li><li>Grab and throw them into each other to open safe attack windows</li></ul>
+
+      <h2 style="margin-top:2rem;margin-bottom:1rem;font-size:1.125rem;font-weight:800;">The Cast</h2>
+      <p>Dead As Disco centers on Charlie Disco and the five former bandmates who betrayed him. Tackle them in any order after the first boss.</p>
+
+      <div class="char-grid">
+        <article class="char-card">
+          <img src="../../images/character-dancer-hide.jpg" alt="Charlie Disco" class="char-img" loading="lazy">
+          <div class="char-body">
+            <span class="char-role">Protagonist</span>
+            <h3 class="char-name">Charlie Disco</h3>
+            <p class="char-desc">Drummer of Dead As Disco. Killed ten years ago, resurrected for one night. Fights to uncover the truth and get revenge. Every punch lands on the beat.</p>
+            <div class="char-meta">
+              <span><strong>Style:</strong> Rhythm Combo</span>
+              <span><strong>Difficulty:</strong> Balanced</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="char-card">
+          <img src="../../images/idol-arora.png" alt="Arora" class="char-img" loading="lazy">
+          <div class="char-body">
+            <span class="char-role">Boss</span>
+            <h3 class="char-name">Arora — The AI Idol</h3>
+            <p class="char-desc">Next-gen AI pop idol built by Harmony Corp. Fires melodic projectiles in rhythm. Boss Phase 2 activates Harmony Trap area denial.</p>
+            <div class="char-meta">
+              <span><strong>Arena:</strong> Digital Stage</span>
+              <span><strong>Difficulty:</strong> ★★☆☆☆</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="char-card">
+          <img src="../../images/idol-riff.png" alt="Riff" class="char-img" loading="lazy">
+          <div class="char-body">
+            <span class="char-role">Boss</span>
+            <h3 class="char-name">Riff — The Guitarist</h3>
+            <p class="char-desc">Former lead guitarist. Attacks with sound waves and riff combinations. Gets aggressive at 50% HP.</p>
+            <div class="char-meta">
+              <span><strong>Arena:</strong> Concert Hall</span>
+              <span><strong>Difficulty:</strong> ★★★☆☆</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="char-card">
+          <img src="../../images/idol-bass.png" alt="Bass" class="char-img" loading="lazy">
+          <div class="char-body">
+            <span class="char-role">Boss</span>
+            <h3 class="char-name">Bass — The Bassist</h3>
+            <p class="char-desc">Former bassist. Low-frequency attacks shake the arena. Creates bass drops that knock Charlie back.</p>
+            <div class="char-meta">
+              <span><strong>Arena:</strong> Underground Club</span>
+              <span><strong>Difficulty:</strong> ★★★☆☆</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="char-card">
+          <img src="../../images/idol-vox.png" alt="Vox" class="char-img" loading="lazy">
+          <div class="char-body">
+            <span class="char-role">Boss</span>
+            <h3 class="char-name">Vox — The Vocalist</h3>
+            <p class="char-desc">Former lead vocalist. Sonic scream attacks and echo traps. Beat Sync phase at 25% HP is extremely dangerous.</p>
+            <div class="char-meta">
+              <span><strong>Arena:</strong> Karaoke Theater</span>
+              <span><strong>Difficulty:</strong> ★★★★☆</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="char-card">
+          <img src="../../images/idol-keys.png" alt="Keys" class="char-img" loading="lazy">
+          <div class="char-body">
+            <span class="char-role">Boss</span>
+            <h3 class="char-name">Keys — The Keyboardist</h3>
+            <p class="char-desc">Former keyboardist. Creates sonic trap formations and uses synthesized attacks. Controls the battlefield with precision.</p>
+            <div class="char-meta">
+              <span><strong>Arena:</strong> Studio Room</span>
+              <span><strong>Difficulty:</strong> ★★★★☆</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h2 style="margin-top:2.5rem;margin-bottom:1rem;font-size:1.125rem;font-weight:800;">Boss Strategy Tips</h2>
+      <ul style="margin:1rem 0 1.5rem 1.5rem;list-style:disc">
+        <li style="margin-bottom:0.5rem"><strong>Save Beat Sync</strong> — Each boss has a Beat Sync phase at 25% HP</li>
+        <li style="margin-bottom:0.5rem"><strong>Watch for pink glow</strong> — Indicates a Beat Sync attack is coming</li>
+        <li style="margin-bottom:0.5rem"><strong>Stagger windows</strong> — 2-3 seconds after a full combo</li>
+        <li style="margin-bottom:0.5rem"><strong>Grab &amp; throw</strong> — Throw bosses into each other to open safe attack windows</li>
+      </ul>
     </div>
   </main>
   <footer class="footer">
