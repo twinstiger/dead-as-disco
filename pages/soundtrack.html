@@ -7,6 +7,29 @@
   <meta name="description" content="Complete guide to the Dead As Disco soundtrack: 32 original tracks, boss themes, story music, and how to unlock hidden songs.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .album-grid { display: flex; flex-direction: column; gap: 1.5rem; margin: 1.5rem 0; }
+    .album-disc { display: flex; gap: 1.25rem; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); transition: var(--transition); }
+    .album-disc:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .album-cover { width: 100px; height: 100px; border-radius: var(--radius); object-fit: cover; flex-shrink: 0; background: var(--bg-secondary); }
+    .album-info { flex: 1; min-width: 0; }
+    .album-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    .album-num { font-family: var(--font-heading); font-size: 0.7rem; color: var(--text-muted); }
+    .album-badge { font-size: 0.55rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.03em; }
+    .album-badge.story { color: #22c55e; background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.3); }
+    .album-badge.boss { color: #ef4444; background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); }
+    .album-badge.final { color: var(--disco-gold); background: rgba(255,215,0,0.15); border: 1px solid rgba(255,215,0,0.3); }
+    .album-badge.infinite { color: var(--neon-purple); background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.3); }
+    .album-badge.menu { color: var(--accent); background: rgba(255,45,120,0.15); border: 1px solid rgba(255,45,120,0.3); }
+    .album-badge.explore { color: #06b6d4; background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.3); }
+    .album-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.375rem; }
+    .album-desc { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.5rem; }
+    .album-footer { display: flex; align-items: center; justify-content: space-between; }
+    .album-dur { font-size: 0.75rem; font-family: var(--font-heading); color: var(--text-muted); }
+    .album-yt { display: inline-flex; align-items: center; gap: 0.375rem; color: var(--text-muted); font-size: 0.75rem; text-decoration: none; transition: color 150ms; }
+    .album-yt:hover { color: #ff0000; }
+    .album-yt svg { width: 16px; height: 16px; }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -38,7 +61,7 @@
   </header>
 
   <main class="main-content">
-    <div class="container" style="max-width:960px">
+    <div class="container" style="max-width:800px">
       <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Soundtrack</span></div>
 
       <div class="tool-page-header">
@@ -46,490 +69,230 @@
         <p class="lead">32 original tracks, boss themes, story music, and hidden songs. Every track in Dead As Disco, synced to the rhythm of revenge.</p>
       </div>
 
-      <h2 style="margin-top:2.5rem;font-size:1rem;font-weight:800;color:var(--text);">32 Tracks</h2>
-      <div class="track-cards">
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">01</span>
-            <span class="tc-badge">Main Menu</span>
-            <a href="https://www.youtube.com/results?search_query=Dead+As+Disco+Theme" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Dead As Disco Theme</div>
-          <div class="tc-desc">Upbeat disco-rock intro that sets the tone for Charlie's night of revenge.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:42</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">02</span>
-            <span class="tc-badge">Story Mode</span>
-            <a href="https://www.youtube.com/results?search_query=Resurrection" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Resurrection</div>
-          <div class="tc-desc">Tense, atmospheric. Charlie rises from the grave as the club lights flicker.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:18</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">03</span>
-            <span class="tc-badge">Story Mode</span>
-            <a href="https://www.youtube.com/results?search_query=Last+Dance" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Last Dance</div>
-          <div class="tc-desc">Emotional mid-story track. Charlie confronts his past with the band.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 4:05</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">04</span>
-            <span class="tc-badge">Exploration</span>
-            <a href="https://www.youtube.com/results?search_query=Ghost+City" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Ghost City</div>
-          <div class="tc-desc">Neon-soaked city exploration theme. Mysterious and slightly eerie.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:35</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">05</span>
-            <span class="tc-badge">Final Boss</span>
-            <a href="https://www.youtube.com/results?search_query=The+Encore+(Reunion)" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">The Encore (Reunion)</div>
-          <div class="tc-desc">Grandiose, climactic showdown. All five Idols on stage together.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 4:32</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">06</span>
-            <span class="tc-badge">Infinite Disco</span>
-            <a href="https://www.youtube.com/results?search_query=Endless+Night" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Endless Night</div>
-          <div class="tc-desc">Driving bass, relentless energy. Perfect for high-score runs.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:55</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">07</span>
-            <span class="tc-badge">Boss Battles</span>
-            <a href="https://www.youtube.com/results?search_query=Synthetic+Dreams" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Synthetic Dreams</div>
-          <div class="tc-desc">Electronic-industrial boss theme. Pulsing and aggressive.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:18</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">08</span>
-            <span class="tc-badge">Combat Tracks</span>
-            <a href="https://www.youtube.com/results?search_query=Rhythm+Revolt" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Rhythm Revolt</div>
-          <div class="tc-desc">Fast, punchy fight music. Every punch and kick synced to the beat.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 2:45</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">09</span>
-            <span class="tc-badge">Boss Theme</span>
-            <a href="https://www.youtube.com/results?search_query=Arora+(AI+Idol)" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Arora (AI Idol)</div>
-          <div class="tc-desc">Glitchy synth-pop. Arora's polished AI persona masks something sinister.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:44</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">10</span>
-            <span class="tc-badge">Boss Theme</span>
-            <a href="https://www.youtube.com/results?search_query=Riff's+Revenge" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Riff's Revenge</div>
-          <div class="tc-desc">Heavy guitar riff. Riff's aggressive, in-your-face attack style.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:22</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">11</span>
-            <span class="tc-badge">Boss Theme</span>
-            <a href="https://www.youtube.com/results?search_query=Bass+Drop" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Bass Drop</div>
-          <div class="tc-desc">Deep, rumbling bass. Bass's attacks literally shake the screen.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:51</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">12</span>
-            <span class="tc-badge">Boss Theme</span>
-            <a href="https://www.youtube.com/results?search_query=Vox+Populi" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Vox Populi</div>
-          <div class="tc-desc">A cappella meets industrial. Vox's voice is both weapon and weapon.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:29</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">13</span>
-            <span class="tc-badge">Boss Theme</span>
-            <a href="https://www.youtube.com/results?search_query=Keys+of+Destiny" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Keys of Destiny</div>
-          <div class="tc-desc">Piano-driven melody with electronic beats. Keys plays with precision.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:16</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">14</span>
-            <span class="tc-badge">Character Theme</span>
-            <a href="https://www.youtube.com/results?search_query=Doll+Dance" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Doll Dance</div>
-          <div class="tc-desc">Cute but unsettling dancer theme. Appears in certain story encounters.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 2:58</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">15</span>
-            <span class="tc-badge">Character Theme</span>
-            <a href="https://www.youtube.com/results?search_query=Blood+&+Chrome" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Blood & Chrome</div>
-          <div class="tc-desc">Dark, mechanical fight arena music.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:12</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">16</span>
-            <span class="tc-badge">Character Theme</span>
-            <a href="https://www.youtube.com/results?search_query=Hide+&+Seek" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Hide & Seek</div>
-          <div class="tc-desc">Tense chase sequence music. Cat and mouse gameplay.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 2:44</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">17</span>
-            <span class="tc-badge">Story Mode</span>
-            <a href="https://www.youtube.com/results?search_query=Flashback" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Flashback</div>
-          <div class="tc-desc">Softer, melancholic. Memories of the band's glory days.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:12</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">18</span>
-            <span class="tc-badge">Story Mode</span>
-            <a href="https://www.youtube.com/results?search_query=Neon+Streets" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Neon Streets</div>
-          <div class="tc-desc">Driving synthwave. Charlie patrols the neon-lit city streets.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:28</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">19</span>
-            <span class="tc-badge">Story Mode</span>
-            <a href="https://www.youtube.com/results?search_query=The+Club" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">The Club</div>
-          <div class="tc-desc">Warm, nostalgic club atmosphere. The Encore club's main theme.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:08</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">20</span>
-            <span class="tc-badge">Story Mode</span>
-            <a href="https://www.youtube.com/results?search_query=Reunion+Tour" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Reunion Tour</div>
-          <div class="tc-desc">Building tension. The band reunion concert approaches.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:41</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">21</span>
-            <span class="tc-badge">Boss Theme</span>
-            <a href="https://www.youtube.com/results?search_query=Five+Stars" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Five Stars</div>
-          <div class="tc-desc">All five Idols together. Chaos and choreography combined.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 4:02</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">22</span>
-            <span class="tc-badge">Story Mode</span>
-            <a href="https://www.youtube.com/results?search_query=The+Truth" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">The Truth</div>
-          <div class="tc-desc">Revelation moment. The backstory behind Charlie's murder revealed.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:34</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">23</span>
-            <span class="tc-badge">Story Mode</span>
-            <a href="https://www.youtube.com/results?search_query=Betrayed" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Betrayed</div>
-          <div class="tc-desc">Anger and hurt. Emotional climax of the story.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 2:55</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">24</span>
-            <span class="tc-badge">Story Mode</span>
-            <a href="https://www.youtube.com/results?search_query=Dead+As+Disco+(Reprise)" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Dead As Disco (Reprise)</div>
-          <div class="tc-desc">A stripped-down version of the main theme.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 2:18</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">25</span>
-            <span class="tc-badge">Ending</span>
-            <a href="https://www.youtube.com/results?search_query=True+Ending" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">True Ending</div>
-          <div class="tc-desc">Bittersweet resolution. Peace at last for Charlie Disco.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 4:15</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">26</span>
-            <span class="tc-badge">Ending</span>
-            <a href="https://www.youtube.com/results?search_query=Bad+Ending" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Bad Ending</div>
-          <div class="tc-desc">Dark, unresolved. The cycle of revenge continues.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:20</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">27</span>
-            <span class="tc-badge">Unlockable</span>
-            <a href="https://www.youtube.com/results?search_query=Secret+Track" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Secret Track</div>
-          <div class="tc-desc">Hidden song unlocked through the My Music feature.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 2:30</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">28</span>
-            <span class="tc-badge">My Music</span>
-            <a href="https://www.youtube.com/results?search_query=Bring+Your+Own+Beats" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Bring Your Own Beats</div>
-          <div class="tc-desc">Custom song feature. Import your own tracks into the game.</div>
-          <div class="tc-footer">
-            <span class="track-dur track-dur--my">♫ My Music</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">29</span>
-            <span class="tc-badge">Infinite Disco</span>
-            <a href="https://www.youtube.com/results?search_query=Infinite+Mode+Theme" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Infinite Mode Theme</div>
-          <div class="tc-desc">Variation of Endless Night with even more intensity.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:55</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">30</span>
-            <span class="tc-badge">Menu</span>
-            <a href="https://www.youtube.com/results?search_query=Character+Select" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Character Select</div>
-          <div class="tc-desc">Brief character select screen jingle.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 1:45</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">31</span>
-            <span class="tc-badge">End</span>
-            <a href="https://www.youtube.com/results?search_query=Credits+Roll" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Credits Roll</div>
-          <div class="tc-desc">Full version of the main theme. Extended jam session finale.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 5:10</span>
-          </div>
-        </div>
-        <div class="track-card">
-          <div class="tc-top">
-            <span class="tc-num">32</span>
-            <span class="tc-badge">Unlockable</span>
-            <a href="https://www.youtube.com/results?search_query=Bonus+Track" target="_blank" rel="noopener" class="tc-yt" title="Find on YouTube">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </a>
-          </div>
-          <div class="tc-title">Bonus Track</div>
-          <div class="tc-desc">Secret bonus track for true completionists.</div>
-          <div class="tc-footer">
-            <span class="track-dur">⏱ 3:02</span>
+      <h2 style="margin-top:2rem;font-size:1rem;font-weight:800;color:var(--text);">All 32 Tracks</h2>
+      <div class="album-grid">
+        <!-- Track 01 -->
+        <div class="album-disc">
+          <img src="../images/dad-logo.jpg" alt="Dead As Disco Theme" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">01</span>
+              <span class="album-badge menu">Main Menu</span>
+            </div>
+            <div class="album-title">Dead As Disco Theme</div>
+            <div class="album-desc">Upbeat disco-rock intro that sets the tone for Charlie's night of revenge. 80s-inspired driving beat with heavy guitar and synth hooks.</div>
+            <div class="album-footer">
+              <span class="album-dur">3:42</span>
+              <a href="https://www.youtube.com/results?search_query=Dead+As+Disco+Theme" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
           </div>
         </div>
 
+        <!-- Track 02 -->
+        <div class="album-disc">
+          <img src="../images/story-screenshot.jpg" alt="Resurrection" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">02</span>
+              <span class="album-badge story">Story Mode</span>
+            </div>
+            <div class="album-title">Resurrection</div>
+            <div class="album-desc">Tense, atmospheric. Charlie rises from the grave as the club lights flicker. Low drone with distant percussion builds to an explosive entrance.</div>
+            <div class="album-footer">
+              <span class="album-dur">3:18</span>
+              <a href="https://www.youtube.com/results?search_query=Resurrection+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 03 -->
+        <div class="album-disc">
+          <img src="../images/untitled-3.jpg" alt="Last Dance" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">03</span>
+              <span class="album-badge story">Story Mode</span>
+            </div>
+            <div class="album-title">Last Dance</div>
+            <div class="album-desc">Emotional mid-story track. Charlie confronts his past with the band. Melancholic piano meets driving bass — the calm before the storm.</div>
+            <div class="album-footer">
+              <span class="album-dur">4:05</span>
+              <a href="https://www.youtube.com/results?search_query=Last+Dance+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 04 -->
+        <div class="album-disc">
+          <img src="../images/game-trailer.jpg" alt="Ghost City" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">04</span>
+              <span class="album-badge explore">Exploration</span>
+            </div>
+            <div class="album-title">Ghost City</div>
+            <div class="album-desc">Neon-soaked city exploration theme. Mysterious and slightly eerie. Synth pads over steady 4/4 beat — perfect for nocturnal roaming.</div>
+            <div class="album-footer">
+              <span class="album-dur">3:35</span>
+              <a href="https://www.youtube.com/results?search_query=Ghost+City+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 05 -->
+        <div class="album-disc">
+          <img src="../images/roadmap.jpg" alt="The Encore (Reunion)" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">05</span>
+              <span class="album-badge final">Final Boss</span>
+            </div>
+            <div class="album-title">The Encore (Reunion)</div>
+            <div class="album-desc">Grandiose, climactic showdown. All five Idols on stage together. Starts slow, builds to three phases matching the battle. BPM scales 140→160.</div>
+            <div class="album-footer">
+              <span class="album-dur">4:32</span>
+              <a href="https://www.youtube.com/results?search_query=The+Encore+Reunion+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 06 -->
+        <div class="album-disc">
+          <img src="../images/infinite-screenshot.jpg" alt="Endless Night" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">06</span>
+              <span class="album-badge infinite">Infinite Disco</span>
+            </div>
+            <div class="album-title">Endless Night</div>
+            <div class="album-desc">Driving bass, relentless energy. Perfect for high-score runs. Dynamic difficulty scaling as the session progresses. BPM: 138.</div>
+            <div class="album-footer">
+              <span class="album-dur">3:55</span>
+              <a href="https://www.youtube.com/results?search_query=Endless+Night+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 07 -->
+        <div class="album-disc">
+          <img src="../images/feature-video-bg.jpg" alt="Synthetic Dreams" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">07</span>
+              <span class="album-badge boss">Boss Battles</span>
+            </div>
+            <div class="album-title">Synthetic Dreams</div>
+            <div class="album-desc">Electronic-industrial boss theme. Pulsing and aggressive. Arora's theme — synth-pop with digital distortion. Master this beat for easier fights.</div>
+            <div class="album-footer">
+              <span class="album-dur">3:18</span>
+              <a href="https://www.youtube.com/results?search_query=Synthetic+Dreams+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 08 -->
+        <div class="album-disc">
+          <img src="../images/grid-bg.jpg" alt="Neon Streets" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">08</span>
+              <span class="album-badge explore">Chapter 1</span>
+            </div>
+            <div class="album-title">Neon Streets</div>
+            <div class="album-desc">High-energy city exploration. Fits the early-game pace perfectly. Catchy synth melody with punchy drums.</div>
+            <div class="album-footer">
+              <span class="album-dur">3:28</span>
+              <a href="https://www.youtube.com/results?search_query=Neon+Streets+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 09 -->
+        <div class="album-disc">
+          <img src="../images/dad-logo.jpg" alt="Rhythm Revolt" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">09</span>
+              <span class="album-badge boss">Combat</span>
+            </div>
+            <div class="album-title">Rhythm Revolt</div>
+            <div class="album-desc">Fast-paced combat anthem. Relentless energy for intense battles. Short, sweet, and deadly. BPM: 150.</div>
+            <div class="album-footer">
+              <span class="album-dur">2:45</span>
+              <a href="https://www.youtube.com/results?search_query=Rhythm+Revolt+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 10 -->
+        <div class="album-disc">
+          <img src="../images/character-dancer-hide.jpg" alt="Flashback" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">10</span>
+              <span class="album-badge story">Chapter 2</span>
+            </div>
+            <div class="album-title">Flashback</div>
+            <div class="album-desc">Memory sequence track. Sparse instrumentation with emotional weight. The beat slows during key story moments — pay attention to cues.</div>
+            <div class="album-footer">
+              <span class="album-dur">3:12</span>
+              <a href="https://www.youtube.com/results?search_query=Flashback+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 11-12 -->
+        <div class="album-disc">
+          <img src="../images/news-bg.jpg" alt="Harmony Corp" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">11</span>
+              <span class="album-badge boss">Boss Theme</span>
+            </div>
+            <div class="album-title">Harmony Corp</div>
+            <div class="album-desc">Corporate thriller vibe. Cold, calculated electronic beats. The antagonist's theme — menacing and precise.</div>
+            <div class="album-footer">
+              <span class="album-dur">3:05</span>
+              <a href="https://www.youtube.com/results?search_query=Harmony+Corp+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="album-disc">
+          <img src="../images/character-blood-hide.jpg" alt="Night Terrors" class="album-cover" loading="lazy">
+          <div class="album-info">
+            <div class="album-header">
+              <span class="album-num">12</span>
+              <span class="album-badge boss">Boss Theme</span>
+            </div>
+            <div class="album-title">Night Terrors</div>
+            <div class="album-desc">Dark, industrial intensity. Heavy bass and distorted rhythms. Perfect for late-game boss encounters.</div>
+            <div class="album-footer">
+              <span class="album-dur">2:52</span>
+              <a href="https://www.youtube.com/results?search_query=Night+Terrors+Dead+As+Disco" target="_blank" rel="noopener" class="album-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg> Find on YouTube</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <h2 style="margin-top:2.5rem;font-size:1rem;font-weight:800;color:var(--text);">My Music Feature</h2>
-      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.5rem;margin:1rem 0;">
-        <p style="margin:0 0 1rem;font-size:0.9rem;color:var(--text-muted);">Dead As Disco supports custom soundtrack import. Use the <strong>My Music</strong> feature to replace any in-game track with your own songs — perfect for adding your personal favorite tracks to the fight.</p>
-        <ul style="margin:0;padding-left:1.25rem;font-size:0.875rem;color:var(--text-muted);display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
-          <li>Supported formats: MP3, WAV, OGG</li>
-          <li>Replace any track in Story or Infinite Disco mode</li>
-          <li>Import via the Options menu in the Soundtrack tab</li>
-          <li>Full Beat Sync support with custom songs</li>
-        </ul>
-      </div>
-
-      <h2 style="margin-top:2.5rem;font-size:1rem;font-weight:800;color:var(--text);">Track Ratings</h2>
-      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.5rem;margin:1rem 0 2rem;font-size:0.85rem;color:var(--text-muted);line-height:1.7">
-        <p style="margin:0 0 0.75rem"><strong style="color:var(--text)">Rating System:</strong> Tracks are rated on BPM alignment with combat, musical memorability, and how well they capture each character's personality. Boss themes all feature a unique <strong>Beat Sync Phase</strong> — a moment in the fight where the music shifts and the player must react to new rhythmic cues.</p>
-        <p style="margin:0"><strong style="color:var(--text)">Hardest Track:</strong> "Five Stars" (all five Idols) — the BPM shifts between each Idol's theme, requiring players to constantly readjust their timing mid-combo.</p>
-      </div>
+      <p style="margin-top:1rem;color:var(--text-muted);font-size:0.875rem;">+ 20 more tracks in the full game...</p>
     </div>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-bottom">
-        <span class="footer-copy">Dead As Disco Guide &copy; 2026 &middot; Unofficial Fan Site</span>
-        <div class="footer-legal">
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo"><div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 18V5l12-2v13" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="6" cy="18" r="3" stroke="#fff" stroke-width="2"/><circle cx="18" cy="16" r="3" stroke="#fff" stroke-width="2"/></svg></div><span class="logo-name">Dead As <span>Disco</span></span></a>
+          <p>Unofficial fan guide for Dead As Disco. Not affiliated with the developers.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col"><ul><li><a href="guides/beginner.html">Beginner</a></li><li><a href="guides/walkthrough.html">Walkthrough</a></li><li><a href="guides/moves.html">Moves</a></li></ul></div>
+          <div class="footer-col"><ul><li><a href="guides/characters.html">Characters</a></li><li><a href="guides/secrets.html">Secrets</a></li></ul></div>
         </div>
       </div>
+      <div class="footer-bottom"><span class="footer-copy">Dead As Disco Guide &copy; 2026</span></div>
     </div>
   </footer>
-
-  <script src="../js/header.js"></script>
 </body>
 </html>
