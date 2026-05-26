@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soundtrack Guide — Dead As Disco</title>
-  <meta name="description" content="32 Dead As Disco soundtrack tracks with YouTube videos. Watch and listen to every boss theme, story track, and hidden song.">
+  <meta name="description" content="32 Dead As Disco soundtrack tracks. Listen to every boss theme, story track, and hidden song.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -38,113 +38,95 @@
   </header>
 
   <main class="main-content">
-    <div class="container" style="max-width:940px">
+    <div class="container" style="max-width:960px">
       <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Soundtrack</span></div>
 
       <div class="tool-page-header">
         <h1 class="tool-page-title">Soundtrack Guide</h1>
-        <p class="lead">32 tracks · Click any track to play. Boss themes, story music, and hidden songs — all in one place.</p>
+        <p class="lead">32 original tracks. Click prev / next to browse, or pick any track from the list below.</p>
       </div>
 
-      <div class="vt-tabs">
-        <div class="vt-tab-scroll">
-        <button class="vt-tab-btn active" onclick="showTrack(1)" data-num="1">#1 Dead As Disco Theme</button>
-        <button class="vt-tab-btn" onclick="showTrack(2)" data-num="2">#2 Resurrection</button>
-        <button class="vt-tab-btn" onclick="showTrack(3)" data-num="3">#3 Last Dance</button>
-        <button class="vt-tab-btn" onclick="showTrack(4)" data-num="4">#4 Ghost City</button>
-        <button class="vt-tab-btn" onclick="showTrack(5)" data-num="5">#5 The Encore (Reunion)</button>
-        <button class="vt-tab-btn" onclick="showTrack(6)" data-num="6">#6 Endless Night</button>
-        <button class="vt-tab-btn" onclick="showTrack(7)" data-num="7">#7 Synthetic Dreams</button>
-        <button class="vt-tab-btn" onclick="showTrack(8)" data-num="8">#8 Rhythm Revolt</button>
-        <button class="vt-tab-btn" onclick="showTrack(9)" data-num="9">#9 Arora (AI Idol)</button>
-        <button class="vt-tab-btn" onclick="showTrack(10)" data-num="10">#10 Riff's Revenge</button>
+      <!-- ===== MUSIC PLAYER ===== -->
+      <div class="mp-wrap">
+        <!-- Prev 2 -->
+        <div class="mp-side mp-side--left">
+          <div class="mp-thumb" id="mpThumbLeft2" onclick="showTrackById(this.dataset.id)">
+            <div class="mp-thumb-num" id="mpLeft2Num"></div>
+            <div class="mp-thumb-title" id="mpLeft2Title"></div>
+            <div class="mp-thumb-album" id="mpLeft2Album"></div>
+          </div>
+          <div class="mp-thumb" id="mpThumbLeft1" onclick="showTrackById(this.dataset.id)">
+            <div class="mp-thumb-num" id="mpLeft1Num"></div>
+            <div class="mp-thumb-title" id="mpLeft1Title"></div>
+            <div class="mp-thumb-album" id="mpLeft1Album"></div>
+          </div>
         </div>
-        <button class="vt-more-btn" id="moreBtn" onclick="toggleAllTracks()">+ All 32 tracks ▾</button>
-        <div id="allTabsContainer" class="vt-all-tabs" style="display:none">
-        <button class="vt-tab-btn" onclick="showTrack(1)" data-num="1">#1 Dead As Disco Theme</button>
-        <button class="vt-tab-btn" onclick="showTrack(2)" data-num="2">#2 Resurrection</button>
-        <button class="vt-tab-btn" onclick="showTrack(3)" data-num="3">#3 Last Dance</button>
-        <button class="vt-tab-btn" onclick="showTrack(4)" data-num="4">#4 Ghost City</button>
-        <button class="vt-tab-btn" onclick="showTrack(5)" data-num="5">#5 The Encore (Reunion)</button>
-        <button class="vt-tab-btn" onclick="showTrack(6)" data-num="6">#6 Endless Night</button>
-        <button class="vt-tab-btn" onclick="showTrack(7)" data-num="7">#7 Synthetic Dreams</button>
-        <button class="vt-tab-btn" onclick="showTrack(8)" data-num="8">#8 Rhythm Revolt</button>
-        <button class="vt-tab-btn" onclick="showTrack(9)" data-num="9">#9 Arora (AI Idol)</button>
-        <button class="vt-tab-btn" onclick="showTrack(10)" data-num="10">#10 Riff's Revenge</button>
-        <button class="vt-tab-btn" onclick="showTrack(11)" data-num="11">#11 Bass Drop</button>
-        <button class="vt-tab-btn" onclick="showTrack(12)" data-num="12">#12 Vox Populi</button>
-        <button class="vt-tab-btn" onclick="showTrack(13)" data-num="13">#13 Keys of Destiny</button>
-        <button class="vt-tab-btn" onclick="showTrack(14)" data-num="14">#14 Doll Dance</button>
-        <button class="vt-tab-btn" onclick="showTrack(15)" data-num="15">#15 Blood & Chrome</button>
-        <button class="vt-tab-btn" onclick="showTrack(16)" data-num="16">#16 Hide & Seek</button>
-        <button class="vt-tab-btn" onclick="showTrack(17)" data-num="17">#17 Flashback</button>
-        <button class="vt-tab-btn" onclick="showTrack(18)" data-num="18">#18 Neon Streets</button>
-        <button class="vt-tab-btn" onclick="showTrack(19)" data-num="19">#19 The Club</button>
-        <button class="vt-tab-btn" onclick="showTrack(20)" data-num="20">#20 Reunion Tour</button>
-        <button class="vt-tab-btn" onclick="showTrack(21)" data-num="21">#21 Five Stars</button>
-        <button class="vt-tab-btn" onclick="showTrack(22)" data-num="22">#22 The Truth</button>
-        <button class="vt-tab-btn" onclick="showTrack(23)" data-num="23">#23 Betrayed</button>
-        <button class="vt-tab-btn" onclick="showTrack(24)" data-num="24">#24 Dead As Disco (Reprise)</button>
-        <button class="vt-tab-btn" onclick="showTrack(25)" data-num="25">#25 True Ending</button>
-        <button class="vt-tab-btn" onclick="showTrack(26)" data-num="26">#26 Bad Ending</button>
-        <button class="vt-tab-btn" onclick="showTrack(27)" data-num="27">#27 Secret Track</button>
-        <button class="vt-tab-btn" onclick="showTrack(28)" data-num="28">#28 Bring Your Own Beats</button>
-        <button class="vt-tab-btn" onclick="showTrack(29)" data-num="29">#29 Infinite Mode Theme</button>
-        <button class="vt-tab-btn" onclick="showTrack(30)" data-num="30">#30 Character Select</button>
-        <button class="vt-tab-btn" onclick="showTrack(31)" data-num="31">#31 Credits Roll</button>
-        <button class="vt-tab-btn" onclick="showTrack(32)" data-num="32">#32 Bonus Track</button>
+
+        <!-- Center main card -->
+        <div class="mp-center">
+          <div class="mp-disc-wrap">
+            <div class="mp-disc-outer">
+              <div class="mp-disc">
+                <div class="mp-disc-grooves"></div>
+                <div class="mp-disc-center"></div>
+              </div>
+            </div>
+            <div class="mp-disc-label" id="mpCenterNum"></div>
+          </div>
+          <div class="mp-info">
+            <div class="mp-badge" id="mpBadge"></div>
+            <h2 class="mp-title" id="mpTitle">Loading...</h2>
+            <div class="mp-dur" id="mpDur"></div>
+            <p class="mp-desc" id="mpDesc"></p>
+            <div class="mp-level">
+              <span class="mp-level-icon">&#127925;</span>
+              <span id="mpLevel"></span>
+            </div>
+          </div>
+          <div class="mp-actions">
+            <a class="mp-yt-btn" id="mpYtBtn" href="#" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              Watch on YouTube
+            </a>
+          </div>
+          <div class="mp-nav">
+            <button class="mp-nav-btn" id="mpPrevBtn" onclick="prevTrack()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+              Prev
+            </button>
+            <span class="mp-counter" id="mpCounter">1 / 32</span>
+            <button class="mp-nav-btn" id="mpNextBtn" onclick="nextTrack()">
+              Next
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Next 2 -->
+        <div class="mp-side mp-side--right">
+          <div class="mp-thumb" id="mpThumbRight1" onclick="showTrackById(this.dataset.id)">
+            <div class="mp-thumb-num" id="mpRight1Num"></div>
+            <div class="mp-thumb-title" id="mpRight1Title"></div>
+            <div class="mp-thumb-album" id="mpRight1Album"></div>
+          </div>
+          <div class="mp-thumb" id="mpThumbRight2" onclick="showTrackById(this.dataset.id)">
+            <div class="mp-thumb-num" id="mpRight2Num"></div>
+            <div class="mp-thumb-title" id="mpRight2Title"></div>
+            <div class="mp-thumb-album" id="mpRight2Album"></div>
+          </div>
         </div>
       </div>
 
-      <div class="vt-player" id="vtPlayer">
-        <div class="vt-embed">
-          <iframe id="mainIframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <!-- Track list -->
+      <div class="mp-tracklist">
+        <div class="mp-list-header">All 32 Tracks</div>
+        <div class="mp-list-scroll" id="mpListScroll">
         </div>
-        <div class="vt-panel-info">
-          <div class="vt-panel-title" id="vtTitle">Select a track to play</div>
-          <div class="vt-panel-meta" id="vtMeta"></div>
-          <div class="vt-panel-desc" id="vtDesc"></div>
-        </div>
-      </div>
-
-      <div class="vt-list">
-      <div class="vt-row vt-row--active" data-num="1" onclick="showTrack(1)"><span class="vt-num">1</span><div class="vt-info"><span class="vt-title">Dead As Disco Theme</span><span class="vt-album">Main Menu</span></div><span class="vt-dur">⏱ 3:42</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Dead+As+Disco+Theme+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row" data-num="2" onclick="showTrack(2)"><span class="vt-num">2</span><div class="vt-info"><span class="vt-title">Resurrection</span><span class="vt-album">Story Mode</span></div><span class="vt-dur">⏱ 3:18</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Resurrection+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row" data-num="3" onclick="showTrack(3)"><span class="vt-num">3</span><div class="vt-info"><span class="vt-title">Last Dance</span><span class="vt-album">Story Mode</span></div><span class="vt-dur">⏱ 4:05</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Last+Dance+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row" data-num="4" onclick="showTrack(4)"><span class="vt-num">4</span><div class="vt-info"><span class="vt-title">Ghost City</span><span class="vt-album">Exploration</span></div><span class="vt-dur">⏱ 3:35</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Ghost+City+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row" data-num="5" onclick="showTrack(5)"><span class="vt-num">5</span><div class="vt-info"><span class="vt-title">The Encore (Reunion)</span><span class="vt-album">Final Boss</span></div><span class="vt-dur">⏱ 4:32</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=The+Encore+(Reunion)+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row" data-num="6" onclick="showTrack(6)"><span class="vt-num">6</span><div class="vt-info"><span class="vt-title">Endless Night</span><span class="vt-album">Infinite Disco</span></div><span class="vt-dur">⏱ 3:55</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Endless+Night+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row" data-num="7" onclick="showTrack(7)"><span class="vt-num">7</span><div class="vt-info"><span class="vt-title">Synthetic Dreams</span><span class="vt-album">Boss Battles</span></div><span class="vt-dur">⏱ 3:18</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Synthetic+Dreams+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row" data-num="8" onclick="showTrack(8)"><span class="vt-num">8</span><div class="vt-info"><span class="vt-title">Rhythm Revolt</span><span class="vt-album">Combat Tracks</span></div><span class="vt-dur">⏱ 2:45</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Rhythm+Revolt+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row" data-num="9" onclick="showTrack(9)"><span class="vt-num">9</span><div class="vt-info"><span class="vt-title">Arora (AI Idol)</span><span class="vt-album">Boss Theme</span></div><span class="vt-dur">⏱ 3:44</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Arora+(AI+Idol)+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row" data-num="10" onclick="showTrack(10)"><span class="vt-num">10</span><div class="vt-info"><span class="vt-title">Riff's Revenge</span><span class="vt-album">Boss Theme</span></div><span class="vt-dur">⏱ 3:22</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Riff's+Revenge+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="11" onclick="showTrack(11)"><span class="vt-num">11</span><div class="vt-info"><span class="vt-title">Bass Drop</span><span class="vt-album">Boss Theme</span></div><span class="vt-dur">⏱ 3:51</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Bass+Drop+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="12" onclick="showTrack(12)"><span class="vt-num">12</span><div class="vt-info"><span class="vt-title">Vox Populi</span><span class="vt-album">Boss Theme</span></div><span class="vt-dur">⏱ 3:29</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Vox+Populi+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="13" onclick="showTrack(13)"><span class="vt-num">13</span><div class="vt-info"><span class="vt-title">Keys of Destiny</span><span class="vt-album">Boss Theme</span></div><span class="vt-dur">⏱ 3:16</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Keys+of+Destiny+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="14" onclick="showTrack(14)"><span class="vt-num">14</span><div class="vt-info"><span class="vt-title">Doll Dance</span><span class="vt-album">Character Theme</span></div><span class="vt-dur">⏱ 2:58</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Doll+Dance+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="15" onclick="showTrack(15)"><span class="vt-num">15</span><div class="vt-info"><span class="vt-title">Blood & Chrome</span><span class="vt-album">Character Theme</span></div><span class="vt-dur">⏱ 3:12</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Blood+&+Chrome+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="16" onclick="showTrack(16)"><span class="vt-num">16</span><div class="vt-info"><span class="vt-title">Hide & Seek</span><span class="vt-album">Character Theme</span></div><span class="vt-dur">⏱ 2:44</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Hide+&+Seek+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="17" onclick="showTrack(17)"><span class="vt-num">17</span><div class="vt-info"><span class="vt-title">Flashback</span><span class="vt-album">Story Mode</span></div><span class="vt-dur">⏱ 3:12</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Flashback+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="18" onclick="showTrack(18)"><span class="vt-num">18</span><div class="vt-info"><span class="vt-title">Neon Streets</span><span class="vt-album">Story Mode</span></div><span class="vt-dur">⏱ 3:28</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Neon+Streets+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="19" onclick="showTrack(19)"><span class="vt-num">19</span><div class="vt-info"><span class="vt-title">The Club</span><span class="vt-album">Story Mode</span></div><span class="vt-dur">⏱ 3:08</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=The+Club+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="20" onclick="showTrack(20)"><span class="vt-num">20</span><div class="vt-info"><span class="vt-title">Reunion Tour</span><span class="vt-album">Story Mode</span></div><span class="vt-dur">⏱ 3:41</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Reunion+Tour+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="21" onclick="showTrack(21)"><span class="vt-num">21</span><div class="vt-info"><span class="vt-title">Five Stars</span><span class="vt-album">Boss Theme</span></div><span class="vt-dur">⏱ 4:02</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Five+Stars+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="22" onclick="showTrack(22)"><span class="vt-num">22</span><div class="vt-info"><span class="vt-title">The Truth</span><span class="vt-album">Story Mode</span></div><span class="vt-dur">⏱ 3:34</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=The+Truth+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="23" onclick="showTrack(23)"><span class="vt-num">23</span><div class="vt-info"><span class="vt-title">Betrayed</span><span class="vt-album">Story Mode</span></div><span class="vt-dur">⏱ 2:55</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Betrayed+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="24" onclick="showTrack(24)"><span class="vt-num">24</span><div class="vt-info"><span class="vt-title">Dead As Disco (Reprise)</span><span class="vt-album">Story Mode</span></div><span class="vt-dur">⏱ 2:18</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Dead+As+Disco+(Reprise)+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="25" onclick="showTrack(25)"><span class="vt-num">25</span><div class="vt-info"><span class="vt-title">True Ending</span><span class="vt-album">Ending</span></div><span class="vt-dur">⏱ 4:15</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=True+Ending+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="26" onclick="showTrack(26)"><span class="vt-num">26</span><div class="vt-info"><span class="vt-title">Bad Ending</span><span class="vt-album">Ending</span></div><span class="vt-dur">⏱ 3:20</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Bad+Ending+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="27" onclick="showTrack(27)"><span class="vt-num">27</span><div class="vt-info"><span class="vt-title">Secret Track</span><span class="vt-album">Unlockable</span></div><span class="vt-dur">⏱ 2:30</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Secret+Track+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="28" onclick="showTrack(28)"><span class="vt-num">28</span><div class="vt-info"><span class="vt-title">Bring Your Own Beats</span><span class="vt-album">My Music</span></div><span class="vt-dur">♫ My Music</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Bring+Your+Own+Beats+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="29" onclick="showTrack(29)"><span class="vt-num">29</span><div class="vt-info"><span class="vt-title">Infinite Mode Theme</span><span class="vt-album">Infinite Disco</span></div><span class="vt-dur">⏱ 3:55</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Infinite+Mode+Theme+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="30" onclick="showTrack(30)"><span class="vt-num">30</span><div class="vt-info"><span class="vt-title">Character Select</span><span class="vt-album">Menu</span></div><span class="vt-dur">⏱ 1:45</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Character+Select+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="31" onclick="showTrack(31)"><span class="vt-num">31</span><div class="vt-info"><span class="vt-title">Credits Roll</span><span class="vt-album">End</span></div><span class="vt-dur">⏱ 5:10</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Credits+Roll+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
-      <div class="vt-row vt-row--hidden" data-num="32" onclick="showTrack(32)"><span class="vt-num">32</span><div class="vt-info"><span class="vt-title">Bonus Track</span><span class="vt-album">Unlockable</span></div><span class="vt-dur">⏱ 3:02</span><a class="vt-yt" href="https://www.youtube.com/results?search_query=Bonus+Track+Dead+As+Disco+soundtrack" target="_blank" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
       </div>
 
       <div class="vt-notice">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:2px"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-        <span>Video IDs are placeholders — replace <code>XXXXXXXXXXX</code> in the HTML with real YouTube video IDs for each track.</span>
+        <span>YouTube IDs are placeholders — replace <code>XXXXXXXXXXX</code> in the HTML with real video IDs.</span>
       </div>
 
       <h2 style="margin-top:2.5rem;font-size:1rem;font-weight:800;color:var(--text);">My Music Feature</h2>
@@ -175,66 +157,96 @@
   <script src="../js/header.js"></script>
   <script>
     var trackData = [
-  [1,"Dead As Disco Theme","Main Menu","3:42","XXXXXXXXXXX"],
-  [2,"Resurrection","Story Mode","3:18","XXXXXXXXXXX"],
-  [3,"Last Dance","Story Mode","4:05","XXXXXXXXXXX"],
-  [4,"Ghost City","Exploration","3:35","XXXXXXXXXXX"],
-  [5,"The Encore (Reunion)","Final Boss","4:32","XXXXXXXXXXX"],
-  [6,"Endless Night","Infinite Disco","3:55","XXXXXXXXXXX"],
-  [7,"Synthetic Dreams","Boss Battles","3:18","XXXXXXXXXXX"],
-  [8,"Rhythm Revolt","Combat Tracks","2:45","XXXXXXXXXXX"],
-  [9,"Arora (AI Idol)","Boss Theme","3:44","XXXXXXXXXXX"],
-  [10,"Riff's Revenge","Boss Theme","3:22","XXXXXXXXXXX"],
-  [11,"Bass Drop","Boss Theme","3:51","XXXXXXXXXXX"],
-  [12,"Vox Populi","Boss Theme","3:29","XXXXXXXXXXX"],
-  [13,"Keys of Destiny","Boss Theme","3:16","XXXXXXXXXXX"],
-  [14,"Doll Dance","Character Theme","2:58","XXXXXXXXXXX"],
-  [15,"Blood & Chrome","Character Theme","3:12","XXXXXXXXXXX"],
-  [16,"Hide & Seek","Character Theme","2:44","XXXXXXXXXXX"],
-  [17,"Flashback","Story Mode","3:12","XXXXXXXXXXX"],
-  [18,"Neon Streets","Story Mode","3:28","XXXXXXXXXXX"],
-  [19,"The Club","Story Mode","3:08","XXXXXXXXXXX"],
-  [20,"Reunion Tour","Story Mode","3:41","XXXXXXXXXXX"],
-  [21,"Five Stars","Boss Theme","4:02","XXXXXXXXXXX"],
-  [22,"The Truth","Story Mode","3:34","XXXXXXXXXXX"],
-  [23,"Betrayed","Story Mode","2:55","XXXXXXXXXXX"],
-  [24,"Dead As Disco (Reprise)","Story Mode","2:18","XXXXXXXXXXX"],
-  [25,"True Ending","Ending","4:15","XXXXXXXXXXX"],
-  [26,"Bad Ending","Ending","3:20","XXXXXXXXXXX"],
-  [27,"Secret Track","Unlockable","2:30","XXXXXXXXXXX"],
-  [28,"Bring Your Own Beats","My Music","-","XXXXXXXXXXX"],
-  [29,"Infinite Mode Theme","Infinite Disco","3:55","XXXXXXXXXXX"],
-  [30,"Character Select","Menu","1:45","XXXXXXXXXXX"],
-  [31,"Credits Roll","End","5:10","XXXXXXXXXXX"],
-  [32,"Bonus Track","Unlockable","3:02","XXXXXXXXXXX"]
+  [1,"Dead As Disco Theme","Main Menu","3:42","XXXXXXXXXXX","Upbeat disco-rock intro that sets the tone for Charlie's night of revenge."],
+  [2,"Resurrection","Story Mode","3:18","XXXXXXXXXXX","Tense, atmospheric. Charlie rises from the grave as the club lights flicker."],
+  [3,"Last Dance","Story Mode","4:05","XXXXXXXXXXX","Emotional mid-story track. Charlie confronts his past with the band."],
+  [4,"Ghost City","Exploration","3:35","XXXXXXXXXXX","Neon-soaked city exploration theme. Mysterious and slightly eerie."],
+  [5,"The Encore (Reunion)","Final Boss","4:32","XXXXXXXXXXX","Grandiose, climactic showdown. All five Idols on stage together."],
+  [6,"Endless Night","Infinite Disco","3:55","XXXXXXXXXXX","Driving bass, relentless energy. Perfect for high-score runs."],
+  [7,"Synthetic Dreams","Boss Battles","3:18","XXXXXXXXXXX","Electronic-industrial boss theme. Pulsing and aggressive."],
+  [8,"Rhythm Revolt","Combat Tracks","2:45","XXXXXXXXXXX","Fast, punchy fight music. Every punch and kick synced to the beat."],
+  [9,"Arora (AI Idol)","Boss Theme","3:44","XXXXXXXXXXX","Glitchy synth-pop. Arora's polished AI persona masks something sinister."],
+  [10,"Riff's Revenge","Boss Theme","3:22","XXXXXXXXXXX","Heavy guitar riff. Riff's aggressive, in-your-face attack style."],
+  [11,"Bass Drop","Boss Theme","3:51","XXXXXXXXXXX","Deep, rumbling bass. Bass's attacks literally shake the screen."],
+  [12,"Vox Populi","Boss Theme","3:29","XXXXXXXXXXX","A cappella meets industrial. Vox's voice is both weapon and weapon."],
+  [13,"Keys of Destiny","Boss Theme","3:16","XXXXXXXXXXX","Piano-driven melody with electronic beats. Keys plays with precision."],
+  [14,"Doll Dance","Character Theme","2:58","XXXXXXXXXXX","Cute but unsettling dancer theme. Appears in certain story encounters."],
+  [15,"Blood & Chrome","Character Theme","3:12","XXXXXXXXXXX","Dark, mechanical fight arena music."],
+  [16,"Hide & Seek","Character Theme","2:44","XXXXXXXXXXX","Tense chase sequence music. Cat and mouse gameplay."],
+  [17,"Flashback","Story Mode","3:12","XXXXXXXXXXX","Softer, melancholic. Memories of the band's glory days."],
+  [18,"Neon Streets","Story Mode","3:28","XXXXXXXXXXX","Driving synthwave. Charlie patrols the neon-lit city streets."],
+  [19,"The Club","Story Mode","3:08","XXXXXXXXXXX","Warm, nostalgic club atmosphere. The Encore club's main theme."],
+  [20,"Reunion Tour","Story Mode","3:41","XXXXXXXXXXX","Building tension. The band reunion concert approaches."],
+  [21,"Five Stars","Boss Theme","4:02","XXXXXXXXXXX","All five Idols together. Chaos and choreography combined."],
+  [22,"The Truth","Story Mode","3:34","XXXXXXXXXXX","Revelation moment. The backstory behind Charlie's murder revealed."],
+  [23,"Betrayed","Story Mode","2:55","XXXXXXXXXXX","Anger and hurt. Emotional climax of the story."],
+  [24,"Dead As Disco (Reprise)","Story Mode","2:18","XXXXXXXXXXX","A stripped-down version of the main theme."],
+  [25,"True Ending","Ending","4:15","XXXXXXXXXXX","Bittersweet resolution. Peace at last for Charlie Disco."],
+  [26,"Bad Ending","Ending","3:20","XXXXXXXXXXX","Dark, unresolved. The cycle of revenge continues."],
+  [27,"Secret Track","Unlockable","2:30","XXXXXXXXXXX","Hidden song unlocked through the My Music feature."],
+  [28,"Bring Your Own Beats","My Music","-","XXXXXXXXXXX","Custom song feature. Import your own tracks into the game."],
+  [29,"Infinite Mode Theme","Infinite Disco","3:55","XXXXXXXXXXX","Variation of Endless Night with even more intensity."],
+  [30,"Character Select","Menu","1:45","XXXXXXXXXXX","Brief character select screen jingle."],
+  [31,"Credits Roll","End","5:10","XXXXXXXXXXX","Full version of the main theme. Extended jam session finale."],
+  [32,"Bonus Track","Unlockable","3:02","XXXXXXXXXXX","Secret bonus track for true completionists."]
     ];
-    var allExpanded = false;
+    var currentId = 1;
 
-    function showTrack(num) {
-      var track = trackData[num - 1];
-      if (!track) return;
-      var vid = track[4];
-      document.getElementById('mainIframe').src = 'https://www.youtube-nocookie.com/embed/' + vid + '?autoplay=1&rel=0';
-      document.getElementById('vtTitle').textContent = num + '. ' + track[1];
-      document.getElementById('vtMeta').innerHTML =
-        '<span class="vt-badge">' + track[2] + '</span>' +
-        '<span class="vt-dur">' + (track[3] !== '-' ? '⏱ ' + track[3] : '♫ My Music') + '</span>';
-      document.getElementById('vtPlayer').scrollIntoView({behavior:'smooth',block:'nearest'});
-      document.querySelectorAll('.vt-tab-btn').forEach(function(b){ b.classList.remove('active'); });
-      document.querySelectorAll('.vt-tab-btn[data-num="'+num+'"]').forEach(function(b){ b.classList.add('active'); });
-      document.querySelectorAll('.vt-row').forEach(function(r){ r.classList.remove('vt-row--active'); });
-      document.querySelectorAll('.vt-row[data-num="'+num+'"]').forEach(function(r){ r.classList.add('vt-row--active'); });
-    }
+    function buildList() {{
+      var list = document.getElementById('mpListScroll');
+      list.innerHTML = '';
+      trackData.forEach(function(t) {{
+        var n = t[0], title = t[1], album = t[2], dur = t[3], vid = t[4], desc = t[5];
+        var isActive = n === currentId;
+        var item = document.createElement('div');
+        item.className = 'mp-list-item' + (isActive ? ' mp-list-item--active' : '');
+        item.dataset.id = n;
+        item.onclick = function() {{ showTrackById(n); }};
+        item.innerHTML = '<span class="mp-list-num">' + n + '</span>' +
+          '<div class="mp-list-info"><span class="mp-list-title">' + title + '</span><span class="mp-list-album">' + album + '</span></div>' +
+          '<span class="mp-list-dur">' + (dur !== '-' ? dur : 'My Music') + '</span>';
+        list.appendChild(item);
+      }});
+    }}
 
-    function toggleAllTracks() {
-      var container = document.getElementById('allTabsContainer');
-      var btn = document.getElementById('moreBtn');
-      allExpanded = !allExpanded;
-      container.style.display = allExpanded ? 'block' : 'none';
-      btn.textContent = allExpanded ? '▲ Hide extra tracks' : '+ All 32 tracks ▾';
-    }
+    function setThumb(id, prefix) {{
+      var t = trackData[id - 1];
+      if (!t) return;
+      var el = document.getElementById('mpThumb' + prefix) || document.getElementById(prefix);
+      if (!el) return;
+      document.getElementById('mp' + prefix + 'Num').textContent = '#' + t[0];
+      document.getElementById('mp' + prefix + 'Title').textContent = t[1];
+      document.getElementById('mp' + prefix + 'Album').textContent = t[2];
+      el.dataset.id = t[0];
+    }}
 
-    showTrack(1);
+    function showTrackById(id) {{
+      currentId = id;
+      var t = trackData[id - 1];
+      if (!t) return;
+      document.getElementById('mpCenterNum').textContent = '#' + t[0];
+      document.getElementById('mpBadge').textContent = t[2];
+      document.getElementById('mpTitle').textContent = t[1];
+      document.getElementById('mpDur').textContent = t[3] !== '-' ? '⏱ ' + t[3] : '♫ My Music';
+      document.getElementById('mpDesc').textContent = t[5];
+      document.getElementById('mpLevel').textContent = 'Game stage: ' + t[2];
+      document.getElementById('mpYtBtn').href = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(t[1]) + '+Dead+As+Disco+soundtrack';
+      document.getElementById('mpCounter').textContent = t[0] + ' / ' + trackData.length;
+      // Side thumbs
+      setThumb(id - 2, 'Left2');
+      setThumb(id - 1, 'Left1');
+      setThumb(id + 1, 'Right1');
+      setThumb(id + 2, 'Right2');
+      document.getElementById('mpPrevBtn').disabled = id <= 1;
+      document.getElementById('mpNextBtn').disabled = id >= trackData.length;
+      buildList();
+      document.getElementById('mpListScroll').parentElement.scrollIntoView({{behavior:'smooth',block:'nearest'}});
+    }}
+
+    function prevTrack() {{ if (currentId > 1) showTrackById(currentId - 1); }}
+    function nextTrack() {{ if (currentId < trackData.length) showTrackById(currentId + 1); }}
+
+    showTrackById(1);
   </script>
 </body>
 </html>
