@@ -11,7 +11,7 @@
     .char-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
     .char-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: var(--transition); }
     .char-card:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); transform: translateY(-4px); }
-    .char-img { width: 100%; height: 200px; object-fit: cover; }
+    .char-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
     .char-body { padding: 1.25rem; }
     .char-role { display: inline-block; font-size: 0.625rem; font-weight: 700; color: var(--neon-purple); background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.3); padding: 0.2rem 0.6rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
     .char-name { font-size: 1.125rem; font-weight: 800; margin-bottom: 0.5rem; font-family: var(--font-heading); }
@@ -55,7 +55,6 @@
         <a href="../../index.html">Home</a> <span>/</span> <a href="index.html">Guides</a> <span>/</span> <span>Characters &amp; Bosses</span>
       </div>
 
-      <div 
       <div class="guide-hero">
         <img src="../../images/char-select.jpg" alt="Characters & Bosses — Dead As Disco" class="guide-hero-img" loading="eager">
         <div class="guide-hero-overlay">
@@ -63,7 +62,7 @@
           <p class="guide-hero-desc">Charlie Disco and the five Idol betrayers — each with unique attack patterns and a Beat Sync phase.</p>
         </div>
       </div>
-class="tool-page-header">
+      <div class="tool-page-header">
         <h1 class="tool-page-title">Characters &amp; Bosses</h1>
         <p class="lead">Meet Charlie Disco and the five Idol betrayers. Each boss has unique attack patterns and a Beat Sync phase.</p>
       </div>
