@@ -473,6 +473,25 @@ p { margin-bottom: 1rem; color: var(--text); }
   text-decoration: none; display: flex; align-items: center; gap: 0.2rem;
 }
 .record-yt:hover { opacity: 0.75; }
+
+/* ============ TRACK LIST ============ */
+.track-list { list-style: none; margin: 1.5rem 0; padding: 0; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; background: var(--bg-card); }
+.track-item { display: flex; align-items: center; justify-content: space-between; padding: 0.875rem 1.25rem; border-bottom: 1px solid var(--border); transition: background 150ms; gap: 1rem; }
+.track-item:last-child { border-bottom: none; }
+.track-item:hover { background: var(--bg-secondary); }
+.track-item--hidden { display: none; }
+.ti-left { display: flex; align-items: center; gap: 0.875rem; flex: 1; min-width: 0; }
+.ti-num { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); font-family: var(--font-heading); min-width: 28px; }
+.ti-meta { display: flex; flex-direction: column; gap: 0.125rem; min-width: 0; }
+.ti-title { font-size: 0.875rem; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ti-album { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; }
+.ti-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.track-dur { font-size: 0.7rem; font-family: var(--font-heading); color: var(--text-muted); }
+.track-dur--my { color: var(--accent); }
+.ti-yt { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-muted); transition: all 150ms; text-decoration: none; }
+.ti-yt:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.track-expand-btn { display: block; width: 100%; text-align: center; padding: 0.875rem; margin: 0.75rem 0; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); cursor: pointer; border: 1px dashed var(--border); border-radius: var(--radius-md); transition: all 150ms; background: var(--bg-card); }
+.track-expand-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--bg-secondary); }
 @media (max-width: 480px) { .container { padding: 0 1rem; } .header-inner { padding: 0 1rem; } }
 
 /* ============ CAROUSEL ============ */
