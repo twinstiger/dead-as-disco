@@ -93,4 +93,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Auto-advance every 4 seconds
   setInterval(function() { goToSlide(currentSlide + 1); }, 4000);
-});
