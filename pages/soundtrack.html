@@ -4,11 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soundtrack Guide — Dead As Disco</title>
-  <meta name="description" content="32 Dead As Disco soundtrack tracks. Listen to every boss theme, story track, and hidden song.">
+  <meta name="description" content="23 Dead As Disco soundtrack tracks. Full playlist of boss themes, story tracks, and character themes.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Scanline overlay -->
+  <div class="st-scanlines"></div>
+
+  <!-- Animated background grid -->
+  <div class="st-bg-grid" aria-hidden="true"></div>
+
+  <!-- Floating corner orbs -->
+  <div class="st-orb st-orb--tl" aria-hidden="true"></div>
+  <div class="st-orb st-orb--tr" aria-hidden="true"></div>
+  <div class="st-orb st-orb--bl" aria-hidden="true"></div>
+  <div class="st-orb st-orb--br" aria-hidden="true"></div>
+
+  <!-- Corner brackets -->
+  <div class="st-corner st-corner--tl" aria-hidden="true"></div>
+  <div class="st-corner st-corner--tr" aria-hidden="true"></div>
+  <div class="st-corner st-corner--bl" aria-hidden="true"></div>
+  <div class="st-corner st-corner--br" aria-hidden="true"></div>
+
   <header class="header">
     <div class="header-inner">
       <a href="../index.html" class="logo">
@@ -38,107 +58,70 @@
   </header>
 
   <main class="main-content">
-    <div class="container" style="max-width:960px">
-      <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Soundtrack</span></div>
+    <div class="container">
 
-      <div class="tool-page-header">
-        <h1 class="tool-page-title">Soundtrack Guide</h1>
-        <p class="lead">32 original tracks. Click prev / next to browse, or pick any track from the list below.</p>
+      <!-- ===== GLITCH TITLE ===== -->
+      <div class="st-title-block">
+        <h1 class="st-title" data-text="Soundtrack Guide">Soundtrack Guide</h1>
+        <div class="st-title-sub">23 Original Tracks &nbsp;•&nbsp; Dead As Disco OST</div>
+        <div class="st-title-line"></div>
       </div>
 
-      <!-- ===== MUSIC PLAYER ===== -->
-      <div class="mp-wrap">
-        <!-- Prev 2 -->
-        <div class="mp-side mp-side--left">
-          <div class="mp-thumb" id="mpThumbLeft2" onclick="showTrackById(this.dataset.id)">
-            <div class="mp-thumb-num" id="mpLeft2Num"></div>
-            <div class="mp-thumb-title" id="mpLeft2Title"></div>
-            <div class="mp-thumb-album" id="mpLeft2Album"></div>
+      <!-- ===== MAIN PLAYER + PLAYLIST ===== -->
+      <div class="st-layout">
+        <!-- Left: Video player -->
+        <div class="st-player-col">
+          <div class="st-player-glow"></div>
+          <div class="st-player-frame">
+            <div id="ytplayer" class="st-player"></div>
           </div>
-          <div class="mp-thumb" id="mpThumbLeft1" onclick="showTrackById(this.dataset.id)">
-            <div class="mp-thumb-num" id="mpLeft1Num"></div>
-            <div class="mp-thumb-title" id="mpLeft1Title"></div>
-            <div class="mp-thumb-album" id="mpLeft1Album"></div>
-          </div>
-        </div>
-
-        <!-- Center main card -->
-        <div class="mp-center">
-          <div class="mp-disc-wrap">
-            <div class="mp-disc-outer">
-              <div class="mp-disc">
-                <div class="mp-disc-grooves"></div>
-                <div class="mp-disc-center"></div>
+          <!-- Now playing card -->
+          <div class="st-now-card">
+            <div class="st-now-glow"></div>
+            <div class="st-now-inner">
+              <div class="st-now-icon">
+                <div class="st-eq">
+                  <div class="st-eq-bar"></div>
+                  <div class="st-eq-bar"></div>
+                  <div class="st-eq-bar"></div>
+                </div>
+              </div>
+              <div class="st-now-info">
+                <span class="st-now-label">▶ NOW PLAYING</span>
+                <span class="st-now-title" id="stNowTitle">Maniac - Hemlock</span>
               </div>
             </div>
-            <div class="mp-disc-label" id="mpCenterNum"></div>
-          </div>
-          <div class="mp-info">
-            <div class="mp-badge" id="mpBadge"></div>
-            <h2 class="mp-title" id="mpTitle">Loading...</h2>
-            <div class="mp-dur" id="mpDur"></div>
-            <p class="mp-desc" id="mpDesc"></p>
-            <div class="mp-level">
-              <span class="mp-level-icon">&#127925;</span>
-              <span id="mpLevel"></span>
-            </div>
-          </div>
-          <div class="mp-actions">
-            <a class="mp-yt-btn" id="mpYtBtn" href="#" target="_blank" rel="noopener">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-              Watch on YouTube
-            </a>
-          </div>
-          <div class="mp-nav">
-            <button class="mp-nav-btn" id="mpPrevBtn" onclick="prevTrack()">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
-              Prev
-            </button>
-            <span class="mp-counter" id="mpCounter">1 / 32</span>
-            <button class="mp-nav-btn" id="mpNextBtn" onclick="nextTrack()">
-              Next
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
-            </button>
           </div>
         </div>
 
-        <!-- Next 2 -->
-        <div class="mp-side mp-side--right">
-          <div class="mp-thumb" id="mpThumbRight1" onclick="showTrackById(this.dataset.id)">
-            <div class="mp-thumb-num" id="mpRight1Num"></div>
-            <div class="mp-thumb-title" id="mpRight1Title"></div>
-            <div class="mp-thumb-album" id="mpRight1Album"></div>
+        <!-- Right: Playlist -->
+        <div class="st-playlist-col">
+          <div class="st-playlist-hdr">
+            <span class="st-playlist-hdr-icon">▣</span>
+            <span>TRACK LIST</span>
+            <span class="st-playlist-count">23</span>
           </div>
-          <div class="mp-thumb" id="mpThumbRight2" onclick="showTrackById(this.dataset.id)">
-            <div class="mp-thumb-num" id="mpRight2Num"></div>
-            <div class="mp-thumb-title" id="mpRight2Title"></div>
-            <div class="mp-thumb-album" id="mpRight2Album"></div>
+          <div class="st-playlist-scroll" id="stListScroll"></div>
+        </div>
+      </div>
+
+      <!-- ===== FEATURE BANNER ===== -->
+      <div class="st-feature">
+        <div class="st-feature-inner">
+          <div class="st-feature-icon">♫</div>
+          <div class="st-feature-text">
+            <h2>MY MUSIC FEATURE</h2>
+            <p>Import your own tracks into the game. Full Beat Sync support. MP3, WAV, OGG supported.</p>
+          </div>
+          <div class="st-feature-tags">
+            <span class="st-pill">MP3</span>
+            <span class="st-pill">WAV</span>
+            <span class="st-pill">OGG</span>
+            <span class="st-pill st-pill-accent">BEAT SYNC</span>
           </div>
         </div>
       </div>
 
-      <!-- Track list -->
-      <div class="mp-tracklist">
-        <div class="mp-list-header">All 32 Tracks</div>
-        <div class="mp-list-scroll" id="mpListScroll">
-        </div>
-      </div>
-
-      <div class="vt-notice">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:2px"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-        <span>YouTube IDs are placeholders — replace <code>XXXXXXXXXXX</code> in the HTML with real video IDs.</span>
-      </div>
-
-      <h2 style="margin-top:2.5rem;font-size:1rem;font-weight:800;color:var(--text);">My Music Feature</h2>
-      <div class="info-block">
-        <p style="margin:0 0 1rem;font-size:0.9rem;color:var(--text-muted);">Dead As Disco supports custom soundtrack import. Use the <strong>My Music</strong> feature to replace any in-game track with your own songs.</p>
-        <ul style="margin:0;padding-left:1.25rem;font-size:0.875rem;color:var(--text-muted);display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
-          <li>Supported formats: MP3, WAV, OGG</li>
-          <li>Replace any track in Story or Infinite Disco mode</li>
-          <li>Import via the Options menu in the Soundtrack tab</li>
-          <li>Full Beat Sync support with custom songs</li>
-        </ul>
-      </div>
     </div>
   </main>
 
@@ -184,96 +167,60 @@
   <script src="../js/header.js"></script>
   <script>
     var trackData = [
-  [1,"Dead As Disco Theme","Main Menu","3:42","XXXXXXXXXXX","Upbeat disco-rock intro that sets the tone for Charlie's night of revenge."],
-  [2,"Resurrection","Story Mode","3:18","XXXXXXXXXXX","Tense, atmospheric. Charlie rises from the grave as the club lights flicker."],
-  [3,"Last Dance","Story Mode","4:05","XXXXXXXXXXX","Emotional mid-story track. Charlie confronts his past with the band."],
-  [4,"Ghost City","Exploration","3:35","XXXXXXXXXXX","Neon-soaked city exploration theme. Mysterious and slightly eerie."],
-  [5,"The Encore (Reunion)","Final Boss","4:32","XXXXXXXXXXX","Grandiose, climactic showdown. All five Idols on stage together."],
-  [6,"Endless Night","Infinite Disco","3:55","XXXXXXXXXXX","Driving bass, relentless energy. Perfect for high-score runs."],
-  [7,"Synthetic Dreams","Boss Battles","3:18","XXXXXXXXXXX","Electronic-industrial boss theme. Pulsing and aggressive."],
-  [8,"Rhythm Revolt","Combat Tracks","2:45","XXXXXXXXXXX","Fast, punchy fight music. Every punch and kick synced to the beat."],
-  [9,"Arora (AI Idol)","Boss Theme","3:44","XXXXXXXXXXX","Glitchy synth-pop. Arora's polished AI persona masks something sinister."],
-  [10,"Riff's Revenge","Boss Theme","3:22","XXXXXXXXXXX","Heavy guitar riff. Riff's aggressive, in-your-face attack style."],
-  [11,"Bass Drop","Boss Theme","3:51","XXXXXXXXXXX","Deep, rumbling bass. Bass's attacks literally shake the screen."],
-  [12,"Vox Populi","Boss Theme","3:29","XXXXXXXXXXX","A cappella meets industrial. Vox's voice is both weapon and weapon."],
-  [13,"Keys of Destiny","Boss Theme","3:16","XXXXXXXXXXX","Piano-driven melody with electronic beats. Keys plays with precision."],
-  [14,"Doll Dance","Character Theme","2:58","XXXXXXXXXXX","Cute but unsettling dancer theme. Appears in certain story encounters."],
-  [15,"Blood & Chrome","Character Theme","3:12","XXXXXXXXXXX","Dark, mechanical fight arena music."],
-  [16,"Hide & Seek","Character Theme","2:44","XXXXXXXXXXX","Tense chase sequence music. Cat and mouse gameplay."],
-  [17,"Flashback","Story Mode","3:12","XXXXXXXXXXX","Softer, melancholic. Memories of the band's glory days."],
-  [18,"Neon Streets","Story Mode","3:28","XXXXXXXXXXX","Driving synthwave. Charlie patrols the neon-lit city streets."],
-  [19,"The Club","Story Mode","3:08","XXXXXXXXXXX","Warm, nostalgic club atmosphere. The Encore club's main theme."],
-  [20,"Reunion Tour","Story Mode","3:41","XXXXXXXXXXX","Building tension. The band reunion concert approaches."],
-  [21,"Five Stars","Boss Theme","4:02","XXXXXXXXXXX","All five Idols together. Chaos and choreography combined."],
-  [22,"The Truth","Story Mode","3:34","XXXXXXXXXXX","Revelation moment. The backstory behind Charlie's murder revealed."],
-  [23,"Betrayed","Story Mode","2:55","XXXXXXXXXXX","Anger and hurt. Emotional climax of the story."],
-  [24,"Dead As Disco (Reprise)","Story Mode","2:18","XXXXXXXXXXX","A stripped-down version of the main theme."],
-  [25,"True Ending","Ending","4:15","XXXXXXXXXXX","Bittersweet resolution. Peace at last for Charlie Disco."],
-  [26,"Bad Ending","Ending","3:20","XXXXXXXXXXX","Dark, unresolved. The cycle of revenge continues."],
-  [27,"Secret Track","Unlockable","2:30","XXXXXXXXXXX","Hidden song unlocked through the My Music feature."],
-  [28,"Bring Your Own Beats","My Music","-","XXXXXXXXXXX","Custom song feature. Import your own tracks into the game."],
-  [29,"Infinite Mode Theme","Infinite Disco","3:55","XXXXXXXXXXX","Variation of Endless Night with even more intensity."],
-  [30,"Character Select","Menu","1:45","XXXXXXXXXXX","Brief character select screen jingle."],
-  [31,"Credits Roll","End","5:10","XXXXXXXXXXX","Full version of the main theme. Extended jam session finale."],
-  [32,"Bonus Track","Unlockable","3:02","XXXXXXXXXXX","Secret bonus track for true completionists."]
+  [1,"nl313EN7tTs","Maniac - Hemlock","4:30"],
+  [2,"aDSMnG4_IPg","Rhythm Divine - Arora","4:07"],
+  [3,"YaAul-Lxwhs","Mission - Prophet","3:21"],
+  [4,"s0HDhPsVNBo","Echolokators (Radio Edit) - Deckard Voltair/Dex","5:09"],
+  [5,"kdze_RiXHZs","Authority - Hemlock","4:22"],
+  [6,"qh_NW4IFdEE","Khwin Kha / Queencard - Arora","2:32"],
+  [7,"GKkWLD7Obtc","Mensch Maschine - Machtwort","3:03"],
+  [8,"ImTf9hgF0dk","Kitsune No Uta - Kuroi Kiri","3:20"],
+  [9,"u5yT-5QpigQ","Send Me an Angel (feat. Arora) - Hemlock","3:41"],
+  [10,"mVxNhDECfpw","The Final Countdown - Deckard Voltair/Dex","4:47"],
+  [11,"avMmEvnUBMA","Charlie's/Untitled Mixtape (Instrumental) - Charlie Disco","2:51"],
+  [12,"U0sLpmIVjuo","Rorivenge - Arora","3:18"],
+  [13,"4TpvnGD7q0E","Faith - Prophet","3:05"],
+  [14,"F5LrtoAwjOk","Subway Asylum - Hemlock","3:38"],
+  [15,"ikvkYKNOy4k","Chaos Control - Deckard Voltair/Dex","4:18"],
+  [16,"sN3p0xxYEJ4","Hyper Sunrise (Newest Version, v12) - Liquid Chroma","5:08"],
+  [17,"yw6GNpXJIlo","Neko Neko Let's Go - Neko-X","2:20"],
+  [18,"4iVLA1iJOvM","Wish - Onimaru","2:22"],
+  [19,"kZXmM8G5Sd8","Holding Out For A Hero - Ded Benedict","3:55"],
+  [20,"qpXNQ7Eh3og","Mission (Boss Remix) - Prophet","3:12"],
+  [21,"K6GFW1h16Jk","Rhythm Divine (Boss Remix) - Arora","2:59"],
+  [22,"2ArTEo6aOK4","Maniac (Punk Version) - Hemlock","4:30"],
+  [23,"j_YoFVc6Xhg","Ded/Dead or Alive (Menu Theme)","3:14"]
     ];
+
     var currentId = 1;
 
+    function loadTrack(vid, title, id) {
+      currentId = id;
+      var player = document.getElementById('ytplayer');
+      player.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + vid + '?list=PL6JCo_RqQAuUWlPDOYd9YcPHp_kCZBzKo&autoplay=1&rel=0" frameborder="0" allowfullscreen></iframe>';
+      document.getElementById('stNowTitle').textContent = title;
+      buildList();
+    }
+
     function buildList() {
-      var list = document.getElementById('mpListScroll');
+      var list = document.getElementById('stListScroll');
       list.innerHTML = '';
       trackData.forEach(function(t) {
-        var n = t[0], title = t[1], album = t[2], dur = t[3], vid = t[4], desc = t[5];
+        var n = t[0], vid = t[1], title = t[2], dur = t[3];
         var isActive = n === currentId;
         var item = document.createElement('div');
-        item.className = 'mp-list-item' + (isActive ? ' mp-list-item--active' : '');
-        item.dataset.id = n;
-        item.onclick = function() { showTrackById(n); };
-        item.innerHTML = '<span class="mp-list-num">' + n + '</span>' +
-          '<div class="mp-list-info"><span class="mp-list-title">' + title + '</span><span class="mp-list-album">' + album + '</span></div>' +
-          '<span class="mp-list-dur">' + (dur !== '-' ? dur : 'My Music') + '</span>';
+        item.className = 'st-item' + (isActive ? ' st-item-active' : '');
+        item.onclick = function() { loadTrack(vid, title, n); };
+        item.innerHTML = '<span class="st-item-num">' + String(n).padStart(2,'0') + '</span>' +
+          '<div class="st-item-bar"></div>' +
+          '<div class="st-item-info"><span class="st-item-title">' + title + '</span></div>' +
+          '<span class="st-item-dur">' + dur + '</span>';
         list.appendChild(item);
       });
     }
 
-    function setThumb(id, prefix) {
-      var t = trackData[id - 1];
-      if (!t) return;
-      var el = document.getElementById('mpThumb' + prefix) || document.getElementById(prefix);
-      if (!el) return;
-      document.getElementById('mp' + prefix + 'Num').textContent = '#' + t[0];
-      document.getElementById('mp' + prefix + 'Title').textContent = t[1];
-      document.getElementById('mp' + prefix + 'Album').textContent = t[2];
-      el.dataset.id = t[0];
-    }
-
-    function showTrackById(id) {
-      currentId = id;
-      var t = trackData[id - 1];
-      if (!t) return;
-      document.getElementById('mpCenterNum').textContent = '#' + t[0];
-      document.getElementById('mpBadge').textContent = t[2];
-      document.getElementById('mpTitle').textContent = t[1];
-      document.getElementById('mpDur').textContent = t[3] !== '-' ? '⏱ ' + t[3] : '♫ My Music';
-      document.getElementById('mpDesc').textContent = t[5];
-      document.getElementById('mpLevel').textContent = 'Game stage: ' + t[2];
-      document.getElementById('mpYtBtn').href = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(t[1]) + '+Dead+As+Disco+soundtrack';
-      document.getElementById('mpCounter').textContent = t[0] + ' / ' + trackData.length;
-      // Side thumbs
-      setThumb(id - 2, 'Left2');
-      setThumb(id - 1, 'Left1');
-      setThumb(id + 1, 'Right1');
-      setThumb(id + 2, 'Right2');
-      document.getElementById('mpPrevBtn').disabled = id <= 1;
-      document.getElementById('mpNextBtn').disabled = id >= trackData.length;
-      buildList();
-      document.getElementById('mpListScroll').parentElement.scrollIntoView({behavior:'smooth',block:'nearest'});
-    }
-
-    function prevTrack() { if (currentId > 1) showTrackById(currentId - 1); }
-    function nextTrack() { if (currentId < trackData.length) showTrackById(currentId + 1); }
-
-    showTrackById(1);
+    buildList();
+    loadTrack(trackData[0][1], trackData[0][2], 1);
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9420599375364457"
      crossorigin="anonymous"></script>
